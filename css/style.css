@@ -12,6 +12,11 @@ h1, h2, h3 {
     font-weight: 700;
 }
 
+/* SE NAO TIVESSE O BOOTSTRAP
+h5{
+    font-weight: bold !important;
+} */
+
 section {
     padding: 80px 0;
 }
