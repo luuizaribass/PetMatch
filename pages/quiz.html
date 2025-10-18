@@ -10,6 +10,10 @@
   <link rel="stylesheet" href="../css/style.css">
 
   <style>
+    .descricao{
+      color: #747474;
+    }
+
     .quiz-container {
       max-width: 800px;
       margin: 60px auto;
@@ -94,7 +98,7 @@
     <div class="quiz-container">
       <div class="quiz-header">
         <h1>🐾 Deu Match com Pet?</h1>
-        <p>Descubra qual pet é mais compatível com você para fazer uma adoção!</p>
+        <p class="descricao">Descubra qual pet é mais compatível com você para fazer uma adoção!</p>
       </div>
 
       <div id="quiz"></div>
@@ -149,7 +153,7 @@
     function loadQuestion() {
       const q = quizData[currentQuestion];
       quizEl.innerHTML = `
-        <h5 class="mb-4">${q.question}</h5>
+        <h5 class="mb-4 fw-bold">${q.question}</h5>
         ${Object.entries(q.options).map(([key, value]) => `
           <div class="form-check text-start mb-2">
             <input class="form-check-input" type="radio" name="answer" id="${key}" value="${key}">
