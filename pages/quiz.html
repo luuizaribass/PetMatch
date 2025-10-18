@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,108 +9,50 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
-
-  <style>
-    .descricao{
-      color: #747474;
-    }
-
-    .quiz-container {
-      max-width: 800px;
-      margin: 60px auto;
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
-      padding: 40px 50px;
-    }
-
-    .quiz-header {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .quiz-header h1 {
-      color: #8b5cf6;
-      font-weight: 700;
-    }
-
-    .btn-next {
-      background-color: #8b5cf6;
-      color: white;
-      border-radius: 30px;
-      padding: 10px 30px;
-      transition: all 0.3s ease;
-      display: block;
-      margin: 25px auto 0;
-    }
-
-    .btn-next:hover {
-      background-color: #7c3aed;
-    }
-
-    #result {
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    #result img {
-      width: 220px;
-      border-radius: 50%;
-      margin-bottom: 15px;
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    footer {
-      background-color: #f3e8ff;
-      color: #333;
-      text-align: center;
-      padding: 20px;
-      /* margin-top: 80px; */
-    }
-  </style>
 </head>
 
-<body>
+<body class="bg-light text-dark" style="font-family: 'Poppins', sans-serif; scroll-behavior: smooth;">
 
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm bg-white">
     <div class="container">
       <img class="logo" src="../assets/icon.png" alt="">
-      <a class="navbar-brand" href="../index.html">Pet Match</a>
+      <a class="navbar-brand fw-bold text-primary fs-5" href="../index.html">Pet Match</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="../index.html#inicio">Início</a></li>
-          <li class="nav-item"><a class="nav-link" href="../index.html#sobre">Sobre</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Quiz</a></li>
-          <li class="nav-item"><a class="nav-link" href="adocao.html">Adote</a></li>
+        <ul class="navbar-nav me-3">
+          <li class="nav-item"><a class="nav-link fw-semibold text-dark me-3" href="../index.html#inicio">Início</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold text-dark me-3" href="../index.html#sobre">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold text-dark me-3" href="#">Quiz</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold text-dark" href="adocao.html">Adote</a></li>
         </ul>
-        <a class="btn-login mx-2" href="login.html">Login</a>
-        <a class="btn-signup" href="cadastro.html">Cadastrar</a>
+        <a class="btn btn-outline-primary rounded-pill me-2" href="login.html">Login</a>
+        <a class="btn btn-primary rounded-pill" href="cadastro.html">Cadastrar</a>
       </div>
     </div>
   </nav>
 
-  <!-- CONTEÚDO DO QUIZ -->
-  <section class="quiz">
-    <div class="quiz-container">
-      <div class="quiz-header">
-        <h1>🐾 Deu Match com Pet?</h1>
-        <p class="descricao">Descubra qual pet é mais compatível com você para fazer uma adoção!</p>
+  <!-- QUIZ -->
+  <section class="py-5 mt-5">
+    <div class="container">
+      <div class="quiz-container mx-auto bg-white rounded-4 shadow p-4 p-md-5" style="max-width:800px;">
+        <div class="quiz-header text-center mb-4">
+          <h1 class="fw-bold text-primary">🐾 Deu Match com Pet?</h1>
+          <p class="text-muted">Descubra qual pet é mais compatível com você para fazer uma adoção!</p>
+        </div>
+
+        <div id="quiz"></div>
+        <button id="nextBtn" class="btn btn-primary d-block mx-auto mt-3">Próxima</button>
+        <div id="result" class="d-none text-center mt-4"></div>
       </div>
-
-      <div id="quiz"></div>
-      <button id="nextBtn" class="btn-next">Próxima</button>
-
-      <div id="result" class="d-none"></div>
     </div>
   </section>
 
   <!-- RODAPÉ -->
-  <footer>
+  <footer class="text-center py-3 bg-purple-light text-dark">
     <p>&copy; 2025 Pet Match | Feito com 💜 e amor pelos animais</p>
   </footer>
 
@@ -128,7 +71,7 @@
     ];
 
     const pets = [
-      { nome: "Thor 🐶", tipo: "ativo", img: "../asets/thor.avif", desc: "Brincalhão e cheio de energia, ideal para quem ama aventuras e movimento." },
+      { nome: "Thor 🐶", tipo: "ativo", img: "../assets/thor.avif", desc: "Brincalhão e cheio de energia, ideal para quem ama aventuras e movimento." },
       { nome: "Bela 🐶", tipo: "carinhoso", img: "../assets/bela.avif", desc: "Doce e amorosa, perfeita para quem fica bastante tempo em casa." },
       { nome: "Luna 🐱", tipo: "tranquilo", img: "../assets/luna.jpg", desc: "Tranquila e observadora, adora silêncio e conforto." },
       { nome: "Tom 🐱", tipo: "independente", img: "../assets/tom.avif", desc: "Curioso e autêntico, ideal para quem tem rotina equilibrada." },
@@ -153,9 +96,9 @@
     function loadQuestion() {
       const q = quizData[currentQuestion];
       quizEl.innerHTML = `
-        <h5 class="mb-4 fw-bold">${q.question}</h5>
+        <h5 class="fw-bold mb-4">${q.question}</h5>
         ${Object.entries(q.options).map(([key, value]) => `
-          <div class="form-check text-start mb-2">
+          <div class="form-check mb-2 text-start">
             <input class="form-check-input" type="radio" name="answer" id="${key}" value="${key}">
             <label class="form-check-label" for="${key}">${value}</label>
           </div>
@@ -184,10 +127,10 @@
       const pet = matched.length ? matched[Math.floor(Math.random() * matched.length)] : pets[Math.floor(Math.random() * pets.length)];
 
       resultEl.innerHTML = `
-        <img src="${pet.img}" alt="${pet.nome}">
+        <img src="${pet.img}" alt="${pet.nome}" class="img-fluid rounded-circle shadow mb-3" style="width:220px;">
         <h3>${pet.nome}</h3>
         <p>${pet.desc}</p>
-        <a href="../index.html" class="btn btn-login mt-3">Voltar ao início</a>
+        <a href="../index.html" class="btn btn-outline-primary mt-3">Voltar ao início</a>
       `;
     }
 

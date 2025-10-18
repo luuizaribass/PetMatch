@@ -1,166 +1,59 @@
-/* ===== CONFIGURAÇÕES GERAIS ===== */
-body {
-    font-family: 'Poppins', sans-serif !important;
-    background-color: #fff;
-    color: #333;
-    scroll-behavior: smooth;
-    margin: 0;
-    padding: 0;
+/* VARIAVEISSS */
+:root {
+    --bs-primary-rgb: 139, 92, 246; /* #8b5cf6 */
 }
 
-h1, h2, h3 {
-    font-weight: 700;
-}
 
-/* SE NAO TIVESSE O BOOTSTRAP
-h5{
-    font-weight: bold !important;
-} */
-
-section {
-    padding: 80px 0;
-}
-
-/* ===== NAVBAR ===== */
+/* LOGO */
 .logo {
     max-width: 30px;
     margin-right: 10px;
 }
 
-.navbar {
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.navbar-brand {
-    color: #8b5cf6 !important;
-    font-weight: 700;
-    font-size: 1.3rem;
-}
-
-.nav-link {
-    color: #555 !important;
-    margin-right: 20px;
-    font-weight: 500;
-}
-
-.nav-link:hover {
-    color: #8b5cf6 !important;
-}
-
-.btn-login {
-    background-color: transparent;
-    border: 2px solid #8b5cf6;
-    color: #8b5cf6;
-    border-radius: 30px;
-    padding: 6px 20px;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.btn-login:hover {
-    background-color: #8b5cf6;
-    color: white;
-    text-decoration: none;
-}
-
-.btn-signup {
-    text-decoration: none;
-    background-color: #8b5cf6;
-    color: white;
-    border-radius: 30px;
-    padding: 6px 20px;
-    transition: all 0.3s ease;
-}
-
-.btn-signup:hover {
-    background-color: #7c3aed;
-}
-
-/* ===== HERO (BANNER PRINCIPAL EM TELA CHEIA) ===== */
-.hero {
-    position: relative;
-    width: 100%;
-    height: auto;               /* deixa a altura automática */
-    display: flex;
-    align-items: flex-end;      /* botão perto do fundo */
-    justify-content: center;    /* centraliza horizontalmente */
-    overflow: hidden;
-}
-
-.hero img {
-    width: 100%;                /* ocupa toda a largura */
-    height: auto;               /* altura proporcional */
-    display: block;
-    object-fit: cover;          /* preenche sem distorcer */
-    max-height: 100vh;          /* limita altura máxima */
-}
-
-/* ===== SOBRE ===== */
-.section-title {
-    color: #8b5cf6;
-    font-weight: 700;
-    margin-bottom: 30px;
-}
-
-/* ===== CARDS DE ADOÇÃO ===== */
-.adote .card {
-    border: none;
-    border-radius: 20px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+/* HOVER NOS CARDS */
+.transition-hover {
     transition: transform 0.3s ease;
 }
-
-.adote .card:hover {
+.transition-hover:hover {
     transform: translateY(-8px);
 }
 
-.adote img {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+/* BOTÕES PERSONALIZADOS (cores) */
+.btn-outline-primary {
+    border-color: #8b5cf6 !important;
+    color: #8b5cf6 !important;
+}
+.btn-outline-primary:hover {
+    background-color: #8b5cf6 !important;
+    color: white !important;
 }
 
-.adote .btn {
-    border-radius: 30px;
-    background-color: #8b5cf6;
-    color: white;
+.btn-primary {
+    background-color: #8b5cf6 !important;
+}
+.btn-primary:hover {
+    background-color: #7c3aed !important;
 }
 
-.adote .btn:hover {
-    background-color: #7c3aed;
+/* QUIZ CARD */
+.quiz-container {
+  border-radius: 20px;
+}
+
+/* COR DOS TÍTULOS (mantendo o roxo do site) */
+body h1, 
+body h2, 
+body h3, 
+body h4, 
+body h5, 
+body h6,
+.section-title,
+.quiz-header h1 {
+    color: #8b5cf6 !important;
 }
 
 
-/* ===== RODAPÉ ===== */
-footer {
-    background-color: #f3e8ff;
-    color: #333;
-    text-align: center;
-    padding: 20px;
-}
-
-
-/* ===== RESPONSIVO ===== */
-@media (max-width: 1024px) {
-
-    .hero-btn {
-        padding: 10px 30px;
-        font-size: 0.95rem;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .hero-btn {
-        padding: 10px 25px;
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) {
-
-    .hero-btn {
-        padding: 8px 20px;
-        font-size: 0.8rem;
-    }
+/* PARÁGRAFOS E TEXTO */
+p, label, span, .descricao, .card-text {
+    color: #555; /* texto cinza escuro */
 }
